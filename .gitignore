@@ -1,0 +1,17 @@
+# Data: raw downloads, Parquet and the DuckDB warehouse are rebuilt by run_all.py
+data/
+*.duckdb
+*.duckdb.wal
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# OS / editors
+.DS_Store
+.idea/
+.vscode/
+
+# Private planning notes (kept local)
+planning/
