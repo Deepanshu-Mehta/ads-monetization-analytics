@@ -1,0 +1,7 @@
+advertiser,industry,bids,impressions,win_rate,spend_rmb,cpm_fen,clicks,ctr,ctr_low,ctr_high,ecpc_fen,conversions,cvr,spend_share,table3_reconciliation
+3386,International e-commerce,14091931,2835897,0.2012,2177.0,76.77,2062,0.000727,0.000696,0.000759,105.59,0,,0.2283,all 10 published cells match
+1458,Chinese vertical e-commerce,14701496,3077016,0.2093,2119.0,68.88,2434,0.000791,0.00076,0.000823,87.07,1,,0.2222,all 10 published cells match
+3427,Oil,14032619,2581615,0.184,2089.0,80.92,1909,0.000739,0.000707,0.000773,109.44,0,,0.219,all 10 published cells match
+3358,Software,3751016,1727542,0.4606,1593.0,92.22,1323,0.000766,0.000726,0.000808,120.42,364,0.2751,0.167,all 10 published cells match
+3476,Tyre,6712268,1968277,0.2932,1559.0,79.22,1023,0.00052,0.000489,0.000553,152.43,26,,0.1635,all 10 published cells match
+All advertisers,,53289330,12190347,0.2288,9538.0,78.24,8751,0.000718,0.000703,0.000733,109.0,391,0.0447,1.0,n/a (total)

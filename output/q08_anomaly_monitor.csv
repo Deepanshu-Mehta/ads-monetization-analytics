@@ -1,0 +1,360 @@
+dataset,entity,period,metric,value,baseline_mean,baseline_sd,z,direction
+Criteo,campaign 5867090,day 23,media cost (idx),0.6547,0.0739,0.0372,15.6,spike
+Criteo,campaign 12100671,day 18,media cost (idx),0.3963,0.2434,0.0121,12.6,spike
+Criteo,campaign 12100671,day 21,impressions,3542.0,1531.7143,172.9323,11.6,spike
+Criteo,campaign 6686701,day 21,media cost (idx),2.8498,1.4116,0.1282,11.2,spike
+Criteo,campaign 24126625,day 27,impressions,932.0,2054.1429,104.1208,-10.8,drop
+Criteo,campaign 27589150,day 19,impressions,597.0,1052.2857,46.3994,-9.8,drop
+Criteo,campaign 26389107,day 26,media cost (idx),0.7392,0.4262,0.0324,9.7,spike
+Criteo,campaign 5867090,day 23,impressions,5644.0,1142.7143,472.677,9.5,spike
+Criteo,campaign 83677,day 25,impressions,1815.0,1320.7143,52.1815,9.5,spike
+Criteo,campaign 26389107,day 26,impressions,2525.0,1585.5714,103.8057,9.0,spike
+Criteo,campaign 12089529,day 21,media cost (idx),0.0,0.1712,0.019,-9.0,drop
+Criteo,campaign 1130498,day 19,media cost (idx),0.7972,0.442,0.0398,8.9,spike
+Criteo,campaign 18975823,day 17,media cost (idx),2.7923,1.7414,0.1205,8.7,spike
+Criteo,campaign 18498853,day 19,impressions,2650.0,1481.5714,135.8564,8.6,spike
+Criteo,campaign 13289562,day 23,impressions,1847.0,1089.5714,89.7122,8.4,spike
+Criteo,campaign 497593,day 27,impressions,7389.0,2726.2857,596.9603,7.8,spike
+Criteo,campaign 32323516,day 11,impressions,4569.0,2777.0,231.4397,7.7,spike
+Criteo,campaign 13166099,day 9,media cost (idx),0.237,0.3001,0.0082,-7.7,drop
+Criteo,campaign 26891650,day 18,media cost (idx),0.7032,0.4109,0.0395,7.4,spike
+Criteo,campaign 9100689,day 29,impressions,536.0,1283.1429,101.9647,-7.3,drop
+Criteo,campaign 6686701,day 21,impressions,8152.0,4328.8571,525.6518,7.3,spike
+Criteo,campaign 11938638,day 8,media cost (idx),0.6399,0.3044,0.048,7.0,spike
+Criteo,campaign 497590,day 11,media cost (idx),0.1904,0.0963,0.0141,6.7,spike
+Criteo,campaign 26891650,day 18,impressions,1598.0,1225.4286,55.9787,6.7,spike
+Criteo,campaign 17288254,day 13,media cost (idx),0.3657,0.1999,0.0252,6.6,spike
+Criteo,campaign 9095251,day 23,impressions,226.0,1129.2857,138.3266,-6.5,drop
+Criteo,campaign 26321366,day 20,impressions,0.0,2104.4286,322.4277,-6.5,drop
+Criteo,campaign 19602309,day 18,media cost (idx),0.8039,0.4229,0.0586,6.5,spike
+Criteo,campaign 16184517,day 18,media cost (idx),0.3945,0.261,0.0208,6.4,spike
+Criteo,campaign 11938638,day 8,impressions,2109.0,1175.0,145.5518,6.4,spike
+Criteo,campaign 2865314,day 18,impressions,3515.0,2533.8571,154.8176,6.3,spike
+Criteo,campaign 14235907,day 18,impressions,2165.0,1638.5714,83.1081,6.3,spike
+Criteo,campaign 29427842,day 11,media cost (idx),4.7834,3.7942,0.1565,6.3,spike
+Criteo,campaign 24126625,day 27,media cost (idx),0.1488,0.3638,0.0345,-6.2,drop
+Criteo,campaign 15073876,day 26,media cost (idx),0.3206,0.1455,0.0282,6.2,spike
+Criteo,campaign 29427842,day 18,impressions,10373.0,9090.5714,207.9903,6.2,spike
+Criteo,campaign 18975813,day 28,media cost (idx),0.857,0.2443,0.0994,6.2,spike
+Criteo,campaign 2865314,day 18,media cost (idx),1.5087,0.8764,0.104,6.1,spike
+Criteo,campaign 28739284,day 18,impressions,2172.0,1539.4286,104.1279,6.1,spike
+Criteo,campaign 13576407,day 12,media cost (idx),0.3181,0.1724,0.024,6.1,spike
+Criteo,campaign 28896342,day 16,media cost (idx),0.8731,0.6171,0.0424,6.0,spike
+Criteo,campaign 19602309,day 18,impressions,4993.0,2698.4286,386.532,5.9,spike
+Criteo,campaign 18498853,day 18,media cost (idx),0.1475,0.0972,0.0085,5.9,spike
+Criteo,campaign 12089529,day 21,impressions,0.0,1167.5714,198.9111,-5.9,drop
+Criteo,campaign 6886817,day 20,impressions,3846.0,1818.1429,346.6465,5.8,spike
+Criteo,campaign 83677,day 25,media cost (idx),0.593,0.4217,0.0296,5.8,spike
+Criteo,campaign 6886817,day 20,media cost (idx),1.7884,0.6715,0.1933,5.8,spike
+Criteo,campaign 13422843,day 12,media cost (idx),0.6888,0.4636,0.0392,5.7,spike
+Criteo,campaign 30368132,day 18,impressions,2854.0,2265.8571,102.7853,5.7,spike
+Criteo,campaign 11321105,day 18,impressions,1575.0,1052.4286,92.1427,5.7,spike
+Criteo,campaign 23852329,day 24,impressions,1515.0,1818.0,53.7742,-5.6,drop
+Criteo,campaign 16922675,day 29,media cost (idx),0.3388,0.1625,0.0317,5.6,spike
+Criteo,campaign 28739284,day 18,media cost (idx),1.525,0.8863,0.1153,5.5,spike
+Criteo,campaign 17686799,day 11,media cost (idx),4.1592,1.8948,0.4186,5.4,spike
+Criteo,campaign 8980585,day 21,media cost (idx),0.2772,0.4146,0.0256,-5.4,drop
+Criteo,campaign 12121528,day 18,media cost (idx),1.6319,0.8335,0.1489,5.4,spike
+Criteo,campaign 26321366,day 20,media cost (idx),0.0,0.2561,0.0478,-5.4,drop
+Criteo,campaign 28739284,day 16,media cost (idx),1.0501,0.8066,0.0456,5.3,spike
+Criteo,campaign 716288,day 18,media cost (idx),0.4804,0.2025,0.0525,5.3,spike
+Criteo,campaign 6686701,day 22,media cost (idx),4.5567,1.6215,0.5564,5.3,spike
+Criteo,campaign 14661605,day 11,impressions,5920.0,4415.7143,285.549,5.3,spike
+Criteo,campaign 4814007,day 18,media cost (idx),0.3979,0.2495,0.0284,5.2,spike
+Criteo,campaign 18498853,day 19,media cost (idx),0.2087,0.1057,0.0198,5.2,spike
+Criteo,campaign 497593,day 9,media cost (idx),1.4599,0.576,0.1712,5.2,spike
+Criteo,campaign 13289562,day 23,media cost (idx),0.291,0.186,0.0204,5.1,spike
+Criteo,campaign 17686799,day 11,impressions,21181.0,10987.7143,1994.7694,5.1,spike
+Criteo,campaign 32323516,day 11,media cost (idx),1.0565,0.5428,0.1009,5.1,spike
+Criteo,campaign 13661608,day 29,impressions,2817.0,2028.2857,155.3241,5.1,spike
+Criteo,campaign 28795043,day 18,media cost (idx),0.2589,0.1211,0.0273,5.0,spike
+Criteo,campaign 7061828,day 27,impressions,3770.0,4612.2857,167.3158,-5.0,drop
+Criteo,campaign 12289574,day 18,media cost (idx),0.375,0.2267,0.0301,4.9,spike
+Criteo,campaign 13661605,day 7,media cost (idx),0.7641,0.4682,0.0603,4.9,spike
+Criteo,campaign 497593,day 28,media cost (idx),0.7212,0.2564,0.0949,4.9,spike
+Criteo,campaign 4293600,day 18,impressions,2072.0,1290.1429,159.7544,4.9,spike
+Criteo,campaign 14289571,day 16,media cost (idx),0.6079,0.3045,0.0622,4.9,spike
+Criteo,campaign 9100689,day 13,media cost (idx),0.0,0.6368,0.1307,-4.9,drop
+Criteo,all campaigns,day 18,media cost (idx),177.5703,150.7155,5.5502,4.8,spike
+Criteo,campaign 14661605,day 16,media cost (idx),4.0025,2.4814,0.3177,4.8,spike
+Criteo,campaign 14121532,day 27,media cost (idx),2.2802,1.3586,0.1942,4.7,spike
+Criteo,campaign 26852339,day 12,impressions,6219.0,3660.2857,543.3933,4.7,spike
+Criteo,campaign 14235907,day 16,media cost (idx),1.4715,1.0861,0.0819,4.7,spike
+Criteo,campaign 28795042,day 24,media cost (idx),0.5678,0.9033,0.0716,-4.7,drop
+Criteo,campaign 6686704,day 28,impressions,1225.0,1902.5714,145.5265,-4.7,drop
+Criteo,campaign 9100689,day 13,impressions,0.0,1979.1429,429.2383,-4.6,drop
+Criteo,campaign 13661605,day 7,impressions,2895.0,1637.7143,272.7971,4.6,spike
+Criteo,campaign 7121544,day 8,impressions,6391.0,4026.1429,523.4868,4.5,spike
+Criteo,campaign 7289590,day 12,media cost (idx),0.5563,0.3963,0.0356,4.5,spike
+Criteo,campaign 497590,day 11,impressions,1679.0,1217.5714,103.0629,4.5,spike
+Criteo,campaign 12100671,day 12,impressions,1942.0,1033.4286,205.5577,4.4,spike
+Criteo,campaign 21294794,day 24,media cost (idx),0.1095,0.1986,0.0202,-4.4,drop
+Criteo,campaign 14458654,day 10,media cost (idx),0.5989,0.9465,0.0787,-4.4,drop
+Criteo,campaign 14289571,day 15,media cost (idx),0.4294,0.2888,0.0318,4.4,spike
+Criteo,campaign 25419531,day 22,media cost (idx),0.29,0.1352,0.0351,4.4,spike
+Criteo,campaign 13422843,day 12,impressions,7461.0,3956.4286,795.5262,4.4,spike
+Criteo,campaign 13661597,day 7,media cost (idx),0.1348,0.326,0.0434,-4.4,drop
+Criteo,campaign 7061828,day 28,media cost (idx),1.0447,1.6146,0.1308,-4.4,drop
+Criteo,campaign 6686704,day 21,media cost (idx),0.9073,0.6806,0.0521,4.4,spike
+Criteo,campaign 30676250,day 26,impressions,1640.0,1192.2857,103.0157,4.3,spike
+Criteo,campaign 15184511,day 15,impressions,11856.0,7881.0,921.6731,4.3,spike
+Criteo,campaign 7061828,day 13,media cost (idx),1.4741,1.8022,0.0765,-4.3,drop
+Criteo,campaign 18975813,day 29,media cost (idx),1.4033,0.3385,0.2484,4.3,spike
+Criteo,campaign 11959615,day 24,impressions,457.0,1150.1429,162.3622,-4.3,drop
+Criteo,campaign 716288,day 18,impressions,2333.0,1414.2857,216.9959,4.2,spike
+Criteo,campaign 24378636,day 26,impressions,7527.0,4532.1429,713.4815,4.2,spike
+Criteo,campaign 13166099,day 28,impressions,417.0,1370.0,227.864,-4.2,drop
+Criteo,campaign 4869922,day 19,impressions,1232.0,1622.4286,94.7169,-4.1,drop
+Criteo,campaign 6686701,day 22,impressions,11221.0,4856.4286,1544.2917,4.1,spike
+Criteo,campaign 6686704,day 28,media cost (idx),0.5845,0.9028,0.0774,-4.1,drop
+Criteo,campaign 10341182,day 19,media cost (idx),5.8106,4.6281,0.2894,4.1,spike
+Criteo,campaign 11959615,day 24,media cost (idx),0.161,0.5027,0.0839,-4.1,drop
+Criteo,campaign 18975813,day 29,impressions,4222.0,1670.7143,626.2068,4.1,spike
+Criteo,campaign 16184517,day 28,impressions,1370.0,1678.4286,75.8328,-4.1,drop
+Criteo,campaign 24126625,day 28,impressions,117.0,1898.8571,438.6002,-4.1,drop
+Criteo,campaign 25419531,day 17,impressions,812.0,1269.8571,113.454,-4.0,drop
+Criteo,campaign 30801593,day 12,impressions,21079.0,14554.7143,1622.8226,4.0,spike
+Criteo,campaign 7061828,day 28,impressions,3064.0,4515.0,361.743,-4.0,drop
+Criteo,campaign 25998432,day 26,impressions,1935.0,1314.5714,155.3307,4.0,spike
+Criteo,campaign 10474106,day 7,media cost (idx),0.4444,0.8966,0.1134,-4.0,drop
+Criteo,campaign 30491418,day 26,impressions,6153.0,4666.8571,373.3191,4.0,spike
+Criteo,campaign 18975823,day 27,impressions,10829.0,7470.5714,845.5889,4.0,spike
+Criteo,campaign 13576407,day 12,impressions,1972.0,1163.2857,204.1639,4.0,spike
+Criteo,campaign 17321082,day 25,media cost (idx),0.7169,1.1585,0.1119,-3.9,drop
+Criteo,campaign 29427842,day 11,impressions,9410.0,7611.1429,455.8938,3.9,spike
+Criteo,campaign 32135670,day 22,media cost (idx),0.9531,0.2155,0.1872,3.9,spike
+Criteo,campaign 18975823,day 29,impressions,14711.0,8696.8571,1526.1101,3.9,spike
+Criteo,campaign 5061834,day 18,media cost (idx),5.5708,4.1651,0.3567,3.9,spike
+Criteo,campaign 10474106,day 17,media cost (idx),1.4054,0.504,0.2299,3.9,spike
+Criteo,campaign 3892353,day 9,media cost (idx),2.1231,0.7097,0.3618,3.9,spike
+Criteo,campaign 7121544,day 8,media cost (idx),2.1243,1.1566,0.2489,3.9,spike
+Criteo,campaign 5544859,day 22,impressions,365.0,2164.5714,465.3851,-3.9,drop
+Criteo,campaign 13365547,day 11,impressions,1468.0,1024.5714,114.9302,3.9,spike
+Criteo,campaign 12100671,day 21,media cost (idx),0.4975,0.2776,0.0571,3.8,spike
+Criteo,campaign 25998432,day 26,media cost (idx),0.119,0.0782,0.0106,3.8,spike
+Criteo,campaign 30801593,day 12,media cost (idx),1.3175,0.8472,0.1227,3.8,spike
+Criteo,campaign 28874676,day 29,media cost (idx),0.3642,0.2105,0.0401,3.8,spike
+Criteo,campaign 9095251,day 23,media cost (idx),0.0466,0.2565,0.0551,-3.8,drop
+Criteo,campaign 30491418,day 27,media cost (idx),4.5241,3.0697,0.3817,3.8,spike
+Criteo,campaign 13166099,day 15,impressions,1194.0,2706.0,400.1512,-3.8,drop
+Criteo,campaign 7061828,day 27,media cost (idx),1.3708,1.6529,0.0747,-3.8,drop
+Criteo,campaign 19602309,day 9,media cost (idx),0.2944,0.5091,0.0568,-3.8,drop
+Criteo,campaign 14235907,day 17,media cost (idx),1.7722,1.1404,0.1674,3.8,spike
+Criteo,campaign 5044698,day 11,media cost (idx),0.6518,0.4493,0.0537,3.8,spike
+Criteo,campaign 3892353,day 9,impressions,3099.0,1152.0,516.4985,3.8,spike
+Criteo,campaign 787943,day 19,impressions,1281.0,1507.4286,60.3679,-3.8,drop
+Criteo,campaign 6810200,day 20,impressions,1054.0,3677.5714,701.3682,-3.7,drop
+Criteo,campaign 17288254,day 23,impressions,1075.0,1467.7143,105.6215,-3.7,drop
+Criteo,campaign 2716286,day 19,media cost (idx),0.408,0.3063,0.0274,3.7,spike
+Criteo,campaign 4828346,day 9,impressions,476.0,2053.0,424.3744,-3.7,drop
+Criteo,campaign 18975823,day 24,impressions,8209.0,6791.0,381.8582,3.7,spike
+Criteo,campaign 12700454,day 28,impressions,1005.0,1687.2857,184.1138,-3.7,drop
+Criteo,campaign 5044698,day 21,impressions,5523.0,2650.5714,775.8243,3.7,spike
+Criteo,campaign 13661608,day 15,media cost (idx),0.5729,0.3582,0.0581,3.7,spike
+Criteo,campaign 1130498,day 20,impressions,1806.0,1067.4286,199.8932,3.7,spike
+Criteo,campaign 9100691,day 18,media cost (idx),0.2779,0.2081,0.0189,3.7,spike
+Criteo,campaign 11938638,day 19,impressions,1969.0,1495.1429,128.7846,3.7,spike
+Criteo,campaign 19602309,day 19,media cost (idx),1.0446,0.4815,0.1532,3.7,spike
+Criteo,campaign 20938751,day 10,media cost (idx),1.7454,0.5368,0.3293,3.7,spike
+Criteo,campaign 30368132,day 14,media cost (idx),1.7055,1.1123,0.1616,3.7,spike
+Criteo,campaign 18975823,day 27,media cost (idx),4.9092,2.8122,0.5715,3.7,spike
+Criteo,campaign 4828346,day 8,media cost (idx),0.2952,0.6109,0.0863,-3.7,drop
+Criteo,campaign 28795043,day 8,media cost (idx),0.1847,0.1176,0.0184,3.7,spike
+Criteo,campaign 14445192,day 19,impressions,1528.0,1063.0,127.5722,3.6,spike
+Criteo,campaign 28874676,day 22,impressions,1497.0,1157.7143,93.1338,3.6,spike
+Criteo,campaign 13422843,day 11,impressions,5560.0,3529.7143,557.5257,3.6,spike
+Criteo,campaign 24126625,day 28,media cost (idx),0.0129,0.3372,0.0891,-3.6,drop
+Criteo,campaign 11500306,day 23,media cost (idx),0.2109,0.2694,0.0161,-3.6,drop
+Criteo,campaign 15184511,day 15,media cost (idx),6.7822,4.2335,0.7015,3.6,spike
+Criteo,campaign 7121544,day 17,media cost (idx),0.9619,1.7656,0.2217,-3.6,drop
+Criteo,campaign 13365547,day 28,media cost (idx),0.8395,0.3802,0.1274,3.6,spike
+Criteo,campaign 28795042,day 15,media cost (idx),1.0518,0.656,0.11,3.6,spike
+Criteo,campaign 30752994,day 19,media cost (idx),0.4144,0.2604,0.0428,3.6,spike
+Criteo,campaign 9100691,day 19,media cost (idx),0.3229,0.2133,0.0307,3.6,spike
+Criteo,campaign 787943,day 11,impressions,1375.0,1064.7143,87.2787,3.6,spike
+Criteo,campaign 9100692,day 7,media cost (idx),0.1759,0.2286,0.0148,-3.6,drop
+Criteo,campaign 14661605,day 7,media cost (idx),2.4762,2.0623,0.1167,3.5,spike
+Criteo,campaign 25419531,day 23,media cost (idx),0.399,0.1556,0.0687,3.5,spike
+Criteo,campaign 28739284,day 19,impressions,2529.0,1645.5714,249.7144,3.5,spike
+Criteo,campaign 2390251,day 23,impressions,2184.0,1641.1429,153.5594,3.5,spike
+Criteo,campaign 14289571,day 16,impressions,3269.0,1764.8571,426.0745,3.5,spike
+Criteo,campaign 2716286,day 19,impressions,1525.0,1171.8571,100.039,3.5,spike
+Criteo,campaign 24378636,day 15,media cost (idx),1.0958,0.6093,0.1379,3.5,spike
+Criteo,campaign 6810200,day 20,media cost (idx),0.0484,0.1658,0.0333,-3.5,drop
+Criteo,campaign 9100691,day 9,media cost (idx),0.1701,0.2262,0.0159,-3.5,drop
+Criteo,campaign 787943,day 22,media cost (idx),0.3536,0.6641,0.0882,-3.5,drop
+Criteo,campaign 4293600,day 22,media cost (idx),0.0463,0.1674,0.0345,-3.5,drop
+Criteo,campaign 25419531,day 22,impressions,2106.0,1058.4286,298.5654,3.5,spike
+Criteo,campaign 19602309,day 19,impressions,6334.0,3025.8571,949.6514,3.5,spike
+Criteo,campaign 25998432,day 17,impressions,1220.0,1579.7143,103.4146,-3.5,drop
+Criteo,campaign 17710664,day 16,media cost (idx),0.2239,0.3424,0.0341,-3.5,drop
+Criteo,campaign 18095238,day 19,impressions,1723.0,1006.4286,207.4688,3.5,spike
+Criteo,campaign 497590,day 10,impressions,1431.0,1156.4286,79.6364,3.4,spike
+Criteo,campaign 19129839,day 21,impressions,4021.0,2769.4286,363.0151,3.4,spike
+Criteo,campaign 15398570,day 19,impressions,14992.0,12354.5714,765.5479,3.4,spike
+Criteo,campaign 26321366,day 18,media cost (idx),0.3404,0.2412,0.0288,3.4,spike
+Criteo,campaign 9100693,day 8,impressions,2614.0,3512.2857,261.0209,-3.4,drop
+Criteo,campaign 13661608,day 29,media cost (idx),0.5572,0.4221,0.0395,3.4,spike
+Criteo,campaign 5686703,day 20,media cost (idx),0.5506,0.3231,0.0666,3.4,spike
+Criteo,campaign 18975823,day 29,media cost (idx),8.2123,3.7287,1.312,3.4,spike
+Criteo,campaign 9100689,day 29,media cost (idx),0.1967,0.4865,0.0849,-3.4,drop
+Criteo,campaign 13365547,day 28,impressions,2443.0,1164.7143,376.1293,3.4,spike
+Criteo,campaign 8892339,day 14,impressions,679.0,1183.7143,148.5617,-3.4,drop
+Criteo,campaign 497593,day 8,media cost (idx),0.8875,0.5062,0.1125,3.4,spike
+Criteo,campaign 14458654,day 9,media cost (idx),0.8058,0.974,0.0496,-3.4,drop
+Criteo,campaign 8892339,day 13,media cost (idx),0.1762,0.2827,0.0315,-3.4,drop
+Criteo,campaign 6886817,day 16,media cost (idx),0.8669,0.4116,0.1347,3.4,spike
+Criteo,campaign 9100693,day 19,media cost (idx),0.9793,0.6393,0.1007,3.4,spike
+Criteo,campaign 28351001,day 24,impressions,6098.0,6976.7143,260.617,-3.4,drop
+Criteo,campaign 497593,day 28,impressions,9525.0,3244.5714,1867.6233,3.4,spike
+Criteo,campaign 17288254,day 13,impressions,1834.0,1116.4286,213.44,3.4,spike
+Criteo,campaign 4293600,day 23,impressions,0.0,1435.5714,428.2876,-3.4,drop
+Criteo,campaign 13661597,day 12,media cost (idx),0.5745,0.2438,0.0987,3.3,spike
+Criteo,campaign 2953716,day 12,impressions,1664.0,1278.4286,115.1779,3.3,spike
+Criteo,campaign 28351001,day 28,media cost (idx),2.7137,3.5564,0.2517,-3.3,drop
+Criteo,campaign 15073876,day 19,media cost (idx),0.1601,0.1358,0.0073,3.3,spike
+Criteo,campaign 25419531,day 14,media cost (idx),0.108,0.1421,0.0102,-3.3,drop
+Criteo,campaign 787943,day 11,media cost (idx),0.4497,0.3147,0.0405,3.3,spike
+Criteo,campaign 19602309,day 9,impressions,2080.0,3322.5714,373.1844,-3.3,drop
+Criteo,campaign 13661608,day 19,impressions,3209.0,2438.7143,231.7482,3.3,spike
+Criteo,campaign 19129839,day 20,impressions,3412.0,2658.1429,227.1941,3.3,spike
+Criteo,campaign 787943,day 12,media cost (idx),0.5364,0.3261,0.0634,3.3,spike
+Criteo,campaign 5544859,day 22,media cost (idx),0.0204,0.2622,0.0729,-3.3,drop
+Criteo,campaign 27589150,day 25,media cost (idx),0.8213,0.3924,0.1295,3.3,spike
+Criteo,campaign 18975813,day 27,media cost (idx),0.42,0.2123,0.0627,3.3,spike
+Criteo,campaign 12700454,day 27,media cost (idx),0.3295,0.4805,0.0456,-3.3,drop
+Criteo,campaign 28739284,day 19,media cost (idx),1.8307,0.9978,0.2518,3.3,spike
+Criteo,campaign 497593,day 20,impressions,3761.0,7104.2857,1011.3942,-3.3,drop
+Criteo,campaign 32009848,day 23,impressions,5300.0,4719.0,176.4152,3.3,spike
+Criteo,campaign 2390251,day 8,impressions,1700.0,1069.2857,191.7583,3.3,spike
+Criteo,campaign 20817326,day 19,media cost (idx),0.202,0.1436,0.0178,3.3,spike
+Criteo,campaign 26852339,day 13,media cost (idx),0.5736,0.3215,0.0768,3.3,spike
+Criteo,campaign 12843318,day 11,media cost (idx),1.0252,0.7604,0.0808,3.3,spike
+Criteo,campaign 12700454,day 28,media cost (idx),0.225,0.4543,0.07,-3.3,drop
+Criteo,campaign 23817046,day 20,media cost (idx),0.5126,0.3758,0.0418,3.3,spike
+Criteo,campaign 14289571,day 15,impressions,2529.0,1659.1429,266.9822,3.3,spike
+Criteo,campaign 2576437,day 22,impressions,3320.0,3697.1429,115.9086,-3.3,drop
+Criteo,campaign 25920690,day 18,media cost (idx),0.5941,0.4002,0.0597,3.2,spike
+Criteo,campaign 5686703,day 20,impressions,2348.0,1395.8571,293.1106,3.2,spike
+Criteo,campaign 16922675,day 27,impressions,878.0,1301.2857,130.6493,-3.2,drop
+Criteo,campaign 32452111,day 26,media cost (idx),0.8351,0.6647,0.0527,3.2,spike
+Criteo,campaign 4828346,day 9,media cost (idx),0.0899,0.5672,0.1477,-3.2,drop
+Criteo,campaign 9100689,day 8,impressions,2073.0,2703.7143,195.3797,-3.2,drop
+Criteo,campaign 18975823,day 28,media cost (idx),6.0546,3.2177,0.8809,3.2,spike
+Criteo,campaign 13661597,day 7,impressions,971.0,1746.8571,241.0086,-3.2,drop
+Criteo,campaign 8980585,day 12,media cost (idx),0.6569,0.4736,0.057,3.2,spike
+Criteo,campaign 14289571,day 7,media cost (idx),0.2496,0.4494,0.0622,-3.2,drop
+Criteo,campaign 21294794,day 17,impressions,974.0,1187.8571,66.5668,-3.2,drop
+Criteo,campaign 14661605,day 18,media cost (idx),6.1185,3.0038,0.9701,3.2,spike
+Criteo,campaign 8980584,day 21,media cost (idx),0.4996,0.3205,0.056,3.2,spike
+Criteo,campaign 8980571,day 12,impressions,3444.0,2035.7143,441.657,3.2,spike
+Criteo,campaign 1130498,day 19,impressions,1444.0,1030.2857,130.3006,3.2,spike
+Criteo,campaign 5686703,day 21,media cost (idx),0.6789,0.3429,0.1062,3.2,spike
+Criteo,campaign 14121532,day 10,impressions,2012.0,3399.7143,439.1692,-3.2,drop
+Criteo,campaign 6442596,day 12,impressions,1811.0,1097.7143,225.777,3.2,spike
+Criteo,campaign 10341182,day 18,media cost (idx),5.1319,4.546,0.1855,3.2,spike
+Criteo,campaign 25419531,day 23,impressions,2683.0,1151.0,485.2164,3.2,spike
+Criteo,campaign 2953716,day 24,impressions,834.0,1279.4286,141.3269,-3.2,drop
+Criteo,campaign 14661605,day 23,impressions,2784.0,5743.2857,941.4311,-3.1,drop
+Criteo,campaign 13661608,day 15,impressions,2642.0,2106.4286,170.5627,3.1,spike
+Criteo,campaign 30535894,day 27,media cost (idx),0.3232,0.7443,0.1344,-3.1,drop
+Criteo,campaign 30535894,day 27,impressions,1323.0,2032.2857,226.4374,-3.1,drop
+Criteo,campaign 17686799,day 26,impressions,14316.0,12374.5714,623.1987,3.1,spike
+Criteo,campaign 9100691,day 10,media cost (idx),0.1362,0.2172,0.026,-3.1,drop
+Criteo,campaign 19129839,day 20,media cost (idx),1.5605,1.0932,0.1502,3.1,spike
+Criteo,campaign 24316983,day 7,impressions,909.0,1322.0,132.842,-3.1,drop
+Criteo,campaign 6686701,day 23,media cost (idx),5.8659,2.081,1.219,3.1,spike
+Criteo,campaign 1130498,day 20,media cost (idx),0.9266,0.4933,0.1398,3.1,spike
+Criteo,campaign 11500306,day 24,media cost (idx),0.1781,0.263,0.0274,-3.1,drop
+Criteo,campaign 14121532,day 28,media cost (idx),2.6639,1.5267,0.368,3.1,spike
+Criteo,campaign 11321105,day 18,media cost (idx),0.9972,0.5602,0.1418,3.1,spike
+Criteo,campaign 13365547,day 11,media cost (idx),0.3354,0.2265,0.0354,3.1,spike
+Criteo,campaign 5686703,day 21,impressions,2869.0,1477.4286,452.8082,3.1,spike
+Criteo,campaign 22419532,day 24,impressions,769.0,1251.5714,157.0625,-3.1,drop
+Criteo,campaign 2828357,day 18,media cost (idx),1.5618,1.1198,0.1439,3.1,spike
+Criteo,campaign 27589150,day 18,media cost (idx),0.4431,0.3141,0.042,3.1,spike
+Criteo,campaign 15746419,day 7,impressions,3168.0,1047.4286,691.1977,3.1,spike
+Criteo,campaign 9100693,day 7,media cost (idx),0.5552,0.6865,0.0428,-3.1,drop
+Criteo,campaign 11289564,day 11,impressions,2583.0,1275.5714,426.2229,3.1,spike
+Criteo,campaign 4869922,day 24,media cost (idx),1.179,0.8194,0.1173,3.1,spike
+Criteo,campaign 2390251,day 22,impressions,1905.0,1598.1429,100.2487,3.1,spike
+Criteo,campaign 5544859,day 8,media cost (idx),0.4926,0.2951,0.0646,3.1,spike
+Criteo,campaign 30676250,day 12,media cost (idx),0.1271,0.0893,0.0123,3.1,spike
+Criteo,campaign 23852329,day 11,impressions,9618.0,6188.2857,1122.222,3.1,spike
+Criteo,campaign 28795042,day 7,media cost (idx),0.4367,0.7998,0.119,-3.1,drop
+Criteo,campaign 13422843,day 24,impressions,1714.0,3534.0,598.8993,-3.0,drop
+Criteo,campaign 2576437,day 7,media cost (idx),1.4219,0.4619,0.3162,3.0,spike
+Criteo,campaign 4869922,day 13,impressions,1757.0,1535.8571,73.0945,3.0,spike
+Criteo,campaign 6886817,day 21,impressions,4627.0,2139.5714,822.6609,3.0,spike
+Criteo,campaign 17686799,day 26,media cost (idx),3.347,2.7707,0.1906,3.0,spike
+Criteo,campaign 9100692,day 26,impressions,1769.0,1396.0,123.677,3.0,spike
+Criteo,campaign 14445192,day 18,impressions,1294.0,1038.1429,84.8635,3.0,spike
+Criteo,campaign 8980571,day 12,media cost (idx),0.5041,0.2992,0.068,3.0,spike
+Criteo,campaign 18975813,day 25,media cost (idx),0.3006,0.1921,0.036,3.0,spike
+Criteo,campaign 11959615,day 29,media cost (idx),1.3548,0.5034,0.2827,3.0,spike
+Criteo,campaign 30676250,day 15,media cost (idx),0.1402,0.098,0.014,3.0,spike
+Criteo,campaign 20938751,day 10,impressions,3373.0,1210.1429,718.9783,3.0,spike
+Criteo,campaign 12089529,day 20,impressions,817.0,1211.1429,131.2001,-3.0,drop
+Criteo,campaign 26852338,day 26,media cost (idx),0.7662,0.4023,0.1212,3.0,spike
+iPinYou (demo),advertiser 3427,2013-06-09 02:00,bids,1800925.0,11180.3333,7075.1461,253.0,spike
+iPinYou (demo),advertiser 3427,2013-06-09 01:00,bids,3260649.0,26504.3333,17902.1428,180.7,spike
+iPinYou (demo),all advertisers,2013-06-09 01:00,bids,3342365.0,118693.1667,42639.4765,75.6,spike
+iPinYou (demo),all advertisers,2013-06-09 02:00,bids,1872135.0,79117.6667,31637.8033,56.7,spike
+iPinYou (demo),advertiser 3427,2013-06-09 03:00,bids,159404.0,11072.3333,8151.1261,18.2,spike
+iPinYou (demo),advertiser 1458,2013-06-06 00:00,bids,942695.0,142502.0,72734.3727,11.0,spike
+iPinYou (demo),advertiser 1458,2013-06-07 14:00,bids,260093.0,97008.8333,15518.6151,10.5,spike
+iPinYou (demo),advertiser 3427,2013-06-09 00:00,bids,216765.0,45839.0,16478.4023,10.4,spike
+iPinYou (demo),advertiser 3476,2013-06-06 07:00,bids,15165.0,11475.1667,430.5677,8.6,spike
+iPinYou (demo),advertiser 1458,2013-06-07 11:00,bids,226073.0,84164.0,16777.6008,8.5,spike
+iPinYou (demo),all advertisers,2013-06-09 04:00,bids,154650.0,39935.3333,13856.3023,8.3,spike
+iPinYou (demo),all advertisers,2013-06-07 14:00,bids,765060.0,318108.5,55841.6565,8.0,spike
+iPinYou (demo),all advertisers,2013-06-09 05:00,bids,131510.0,35164.1667,12222.0014,7.9,spike
+iPinYou (demo),advertiser 1458,2013-06-07 12:00,bids,233406.0,87624.8333,18587.2349,7.8,spike
+iPinYou (demo),advertiser 3427,2013-06-07 14:00,bids,151507.0,50862.4,14584.0022,6.9,spike
+iPinYou (demo),advertiser 1458,2013-06-07 15:00,bids,255318.0,97506.6667,23217.9526,6.8,spike
+iPinYou (demo),advertiser 3476,2013-06-06 01:00,bids,19429.0,13244.6667,1006.2327,6.1,spike
+iPinYou (demo),all advertisers,2013-06-07 15:00,bids,781492.0,349160.5,72126.9844,6.0,spike
+iPinYou (demo),advertiser 1458,2013-06-07 13:00,bids,246951.0,93589.6667,26028.2568,5.9,spike
+iPinYou (demo),advertiser 1458,2013-06-07 23:00,bids,191746.0,71093.8333,20852.3036,5.8,spike
+iPinYou (demo),advertiser 3427,2013-06-08 23:00,bids,21210.0,54674.8,6111.5699,-5.5,drop
+iPinYou (demo),advertiser 1458,2013-06-07 10:00,bids,201624.0,85470.6667,21270.3306,5.5,spike
+iPinYou (demo),advertiser 3427,2013-06-06 17:00,bids,287191.0,66919.1667,40852.3325,5.4,spike
+iPinYou (demo),advertiser 3476,2013-06-07 11:00,bids,143705.0,67682.4,14133.0551,5.4,spike
+iPinYou (demo),all advertisers,2013-06-10 22:00,bids,1119944.0,305283.8333,152175.3489,5.4,spike
+iPinYou (demo),advertiser 3427,2013-06-07 15:00,bids,149374.0,64093.4,15990.2323,5.3,spike
+iPinYou (demo),all advertisers,2013-06-07 11:00,bids,769046.0,315092.3333,86072.1209,5.3,spike
+iPinYou (demo),advertiser 3427,2013-06-07 11:00,bids,159760.0,66007.3333,18272.9957,5.1,spike
+iPinYou (demo),all advertisers,2013-06-06 06:00,bids,63203.0,32642.1667,6188.9389,4.9,spike
+iPinYou (demo),advertiser 3476,2013-06-07 12:00,bids,131982.0,69183.2,12971.6692,4.8,spike
+iPinYou (demo),advertiser 3476,2013-06-06 02:00,bids,16006.0,11298.1667,992.3196,4.7,spike
+iPinYou (demo),all advertisers,2013-06-07 12:00,bids,769345.0,324476.3333,93824.5383,4.7,spike
+iPinYou (demo),advertiser 1458,2013-06-07 16:00,bids,261316.0,104867.6667,33055.4564,4.7,spike
+iPinYou (demo),advertiser 3386,2013-06-07 14:00,bids,226996.0,104405.1667,26749.7518,4.6,spike
+iPinYou (demo),advertiser 3476,2013-06-07 16:00,bids,146912.0,67487.8,18481.9525,4.3,spike
+iPinYou (demo),all advertisers,2013-06-07 13:00,bids,755664.0,358735.1667,92436.4256,4.3,spike
+iPinYou (demo),advertiser 3427,2013-06-06 22:00,bids,105712.0,50390.0,13144.6247,4.2,spike
+iPinYou (demo),advertiser 3386,2013-06-07 11:00,bids,220046.0,86166.6667,32240.7436,4.2,spike
+iPinYou (demo),advertiser 3358,2013-06-12 10:00,bids,64763.0,21941.2,10749.6702,4.0,spike
+iPinYou (demo),all advertisers,2013-06-09 03:00,bids,233615.0,84419.8333,38020.7587,3.9,spike
+iPinYou (demo),advertiser 3427,2013-06-06 16:00,bids,283739.0,76192.8333,54173.1056,3.8,spike
+iPinYou (demo),advertiser 3358,2013-06-12 00:00,bids,401851.0,86074.4,82909.9185,3.8,spike
+iPinYou (demo),advertiser 1458,2013-06-07 22:00,bids,205638.0,96257.1667,28973.7447,3.8,spike
+iPinYou (demo),advertiser 3386,2013-06-07 12:00,bids,225082.0,99523.1667,34285.3214,3.7,spike
+iPinYou (demo),advertiser 3427,2013-06-07 12:00,bids,155871.0,56902.6667,27604.8285,3.6,spike
+iPinYou (demo),advertiser 3358,2013-06-12 12:00,bids,40082.0,23912.0,4549.7685,3.6,spike
+iPinYou (demo),all advertisers,2013-06-06 00:00,bids,1217157.0,488643.1667,205318.6593,3.5,spike
+iPinYou (demo),advertiser 1458,2013-06-07 09:00,bids,144624.0,57928.8333,24442.8217,3.5,spike
+iPinYou (demo),advertiser 3476,2013-06-07 14:00,bids,108004.0,64358.2,12461.5673,3.5,spike
+iPinYou (demo),advertiser 3386,2013-06-07 15:00,bids,237023.0,109532.5,36820.0192,3.5,spike
+iPinYou (demo),advertiser 3427,2013-06-06 20:00,bids,120004.0,62015.3333,16779.8398,3.5,spike
+iPinYou (demo),advertiser 1458,2013-06-07 21:00,bids,205134.0,92228.5,33214.146,3.4,spike
+iPinYou (demo),advertiser 3476,2013-06-08 08:00,bids,35741.0,21951.0,4102.0146,3.4,spike
+iPinYou (demo),advertiser 1458,2013-06-07 08:00,bids,45632.0,26760.3333,5616.2918,3.4,spike
+iPinYou (demo),advertiser 1458,2013-06-07 20:00,bids,235626.0,94830.1667,42443.4039,3.3,spike
+iPinYou (demo),advertiser 3427,2013-06-06 21:00,bids,97741.0,48594.8,14955.4714,3.3,spike
+iPinYou (demo),advertiser 3386,2013-06-06 07:00,bids,31460.0,18934.5,3813.0018,3.3,spike
+iPinYou (demo),advertiser 3386,2013-06-06 01:00,bids,51207.0,28489.6667,7204.2085,3.2,spike
+iPinYou (demo),advertiser 3386,2013-06-07 21:00,bids,205322.0,96291.8333,34699.9549,3.1,spike
+iPinYou (demo),advertiser 3386,2013-06-08 09:00,bids,156713.0,61710.3333,30509.366,3.1,spike
+iPinYou (demo),advertiser 1458,2013-06-07 17:00,bids,217665.0,102151.0,37300.5933,3.1,spike
+iPinYou (demo),advertiser 1458,2013-06-07 19:00,bids,225264.0,106450.0,39364.2572,3.0,spike

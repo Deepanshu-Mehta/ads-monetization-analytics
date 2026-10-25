@@ -2,11 +2,26 @@
 
 Business analysis of an ad platform's revenue, auction health and advertiser performance, built on two public advertising datasets with SQL (DuckDB), Excel and a BI dashboard.
 
-> **Status:** in progress. The warehouse, its quality gates and the metric layer are complete; findings, recommendations and the dashboard are added as later phases land.
+> **Status:** in progress. The warehouse, quality gates, metric layer and the auction-health questions (Q1–Q8) are complete; advertiser analysis, recommendations and the dashboard follow.
 
 ## Business questions
 
-The project answers 16 questions an ads-monetization analyst faces every week, from *"why did revenue move?"* to *"what is a reserve-price change worth before we ship it?"*. Each question has its own SQL file in `sql/05_analysis/`, which opens with the question and its one-sentence answer. The answers table is filled in here as each phase completes.
+Each question has its own SQL file in [`sql/05_analysis/`](sql/05_analysis/), which opens with the question, the perspective it takes and its answer; results are exported to [`output/`](output/). iPinYou money is in Chinese fen (100 fen = 1 RMB); prices are CPM.
+
+**Auction health and pricing (iPinYou, 6–12 Jun 2013)**
+
+| # | Question | Answer |
+| :- | :- | :- |
+| [Q1](sql/05_analysis/q01_market_overview.sql) | What does the market look like? | 12.2M impressions from 53.3M bids (22.9% win rate) at a 78-fen CPM, reconciling exactly to the published benchmark. Tyre advertiser 3476 has the lowest CTR (0.052%) and an eCPC 40% above average. |
+| [Q2](sql/05_analysis/q02_competition_by_hour.sql) | When is competition highest? | At midnight: the 00:00 market price (94.8 fen) is 46% above the 02:00 trough, and 00:00 is dearer than 02:00 on every date in the window. |
+| [Q3](sql/05_analysis/q03_inventory_value.sql) | Which inventory is overpriced? | 300x250 below the fold: 9.0% of spend for 3.2% of clicks (eCPC 307 fen). The same size above the fold costs 38% more CPM but delivers 6.3x the CTR. |
+| [Q4](sql/05_analysis/q04_exchange_value.sql) | Which exchanges deliver value? | AdX has the dearest clicks for all five advertisers (eCPC +60% vs Tencent), yet takes 26–34% of each one's spend. |
+| [Q5](sql/05_analysis/q05_competition_depth.sql) | Where is competition thin? | AdX below the fold: median clearing price 47 fen, 30.5% of auctions under 30 fen, on 15% of spend. |
+| [Q6](sql/05_analysis/q06_floor_price_effects.sql) | Do floor prices shape outcomes? | Yes, within each exchange: Tencent's clearing price rises from 29 to 79 fen across floor buckets. Six Tencent slots floored at 100 take 23% of all bids and are never won. |
+| [Q7](sql/05_analysis/q07_floor_price_simulation.sql) | What would raising the floor do? | +3.4% revenue with 92% of impressions kept if 70% of affected auctions still clear; break-even at 44–56% retention, so buyer response decides the outcome. |
+| [Q8](sql/05_analysis/q08_anomaly_monitor.sql) | Is anything broken? | One platform-level alert in 23 days (day 18 media cost +18%); per-campaign alerts need an abs(z) ≥ 5 bar to stay actionable. Catches a 28x bid burst from one advertiser on 9 Jun. |
+
+Q5–Q7 take the seller's view, estimated from one buyer's won auctions. iPinYou bid fixed test prices, so the floor analysis rests on clearing prices, not bids (decision D41).
 
 ## Data
 
@@ -57,7 +72,7 @@ pip install -r requirements.txt
 python run_all.py --load        # download (~4.3 GB), verify checksums, convert to Parquet, build the warehouse
 python run_all.py --test        # rerun the quality gates
 python run_all.py --profile     # regenerate docs/data_profile.md from the warehouse
-python run_all.py --analysis    # run the business questions, export results to output/
+python run_all.py --analysis    # run the business questions, export results to output/ (about 5 seconds)
 ```
 
 Every step is idempotent and can be rerun safely.
@@ -74,6 +89,7 @@ Every step is idempotent and can be rerun safely.
 │   ├── 03_marts/           # fact_*, dim_*, mart_*, metric macros and views
 │   ├── 04_test_marts/      # gate 2: benchmark reconciliation and business rules
 │   └── 05_analysis/        # q01 … q16, one business question each
+├── output/                 # results of each business question, as CSV
 ├── excel/                  # floor-price sizing model
 ├── dashboard/              # dashboard file and page exports
 └── docs/                   # requirements, decision log, data profile, metric dictionary
