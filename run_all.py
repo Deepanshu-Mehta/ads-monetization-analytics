@@ -4,6 +4,7 @@ Stages, in order:
   --load      download (if needed) -> Parquet -> sql/00_load -> sql/01_staging
               -> gate 1 (sql/02_test_staging) -> sql/03_marts -> gate 2 (sql/04_test_marts)
   --test      rerun both test gates against the existing warehouse, without rebuilding
+  --profile   write docs/data_profile.md from the built warehouse
   --analysis  run sql/05_analysis and export each result to output/
   --report    write docs/weekly_review.md (stretch goal)
 
@@ -105,7 +106,7 @@ def stage_report(con) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    for flag in ("load", "test", "analysis", "report"):
+    for flag in ("load", "test", "profile", "analysis", "report"):
         parser.add_argument(f"--{flag}", action="store_true")
     args = parser.parse_args()
     if not any(vars(args).values()):
@@ -120,6 +121,10 @@ def main() -> None:
             stage_load(con)
         elif args.test:
             stage_test(con)
+        if args.profile:
+            con.close()  # the profiler opens its own read-only connection
+            run_python("profile_data.py")
+            con = connect()
         if args.analysis:
             stage_analysis(con)
         if args.report:

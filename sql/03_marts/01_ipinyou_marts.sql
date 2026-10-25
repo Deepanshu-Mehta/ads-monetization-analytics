@@ -1,8 +1,7 @@
 -- Marts: iPinYou star schema (auction health, inventory, pricing simulation).
 -- Built only after gate 1 (sql/02_test_staging) passes.
--- Price unit: pay_price and bid_price are CPM in the released, scaled units. Zhang et al.
--- (2014) report them in fen; the dataset specification says RMB. The Table 3 reconciliation
--- in gate 2 settles it; spend_fen assumes fen until then.
+-- Price unit: bid_price, pay_price and floor_price are CPM in Chinese fen (Zhang et al., 2014,
+-- section 2.2), so one impression costs pay_price / 1000 fen (D29).
 
 -- dim_advertiser
 -- Grain: one row per advertiser (Season 2 has 5, one campaign each).   Primary key: advertiser_id
@@ -31,17 +30,14 @@ SELECT * FROM (VALUES
 
 -- dim_slot
 -- Grain: one row per ad slot.   Primary key: slot_id
--- Source: stg_ipy_bids. Attributes are the most frequent value per slot; attribute_variants
--- counts distinct width/height/visibility/format combinations. Phase 2 tests that it is 1;
--- if not, those attributes move onto fact_auction.
+-- Source: stg_ipy_bids. Visibility changes from one impression to the next on 28.5K slots, and
+-- size or format on a few dozen, so these attributes live on fact_auction (D30). This table
+-- keeps slot-level context only: the most common size and how many attribute combinations
+-- the slot was seen with.
 CREATE OR REPLACE TABLE dim_slot AS
 SELECT
     slot_id,
-    mode(slot_width)                                                         AS slot_width,
-    mode(slot_height)                                                        AS slot_height,
-    mode(slot_width || 'x' || slot_height)                                   AS size_label,
-    mode(slot_visibility)                                                    AS slot_visibility,
-    mode(slot_format)                                                        AS slot_format,
+    mode(slot_width || 'x' || slot_height)                                   AS modal_size_label,
     count(DISTINCT concat_ws('|', slot_width, slot_height, slot_visibility, slot_format))
                                                                              AS attribute_variants,
     count(*)                                                                 AS bids
@@ -50,14 +46,22 @@ GROUP BY slot_id;
 
 -- dim_geo
 -- Grain: one row per (region, city) pair observed in the bid log.   Primary key: (region_id, city_id)
--- Source: stg_ipy_bids + region.en.txt / city.en.txt lookups
+-- Source: stg_ipy_bids + region.en.txt / city.en.txt lookups. The lookups do not cover every
+-- id (10.8% of bids have an unnamed city), so *_label falls back to the id (D34).
 CREATE OR REPLACE TABLE dim_geo AS
 WITH pairs AS (
     SELECT region_id, city_id, count(*) AS bids
     FROM stg_ipy_bids
     GROUP BY ALL
 )
-SELECT p.region_id, r.name AS region_name, p.city_id, c.name AS city_name, p.bids
+SELECT
+    p.region_id,
+    r.name                                                       AS region_name,
+    coalesce(r.name, 'Unknown region ' || p.region_id)           AS region_label,
+    p.city_id,
+    c.name                                                       AS city_name,
+    coalesce(c.name, 'Unknown city ' || p.city_id)               AS city_label,
+    p.bids
 FROM pairs p
 LEFT JOIN raw_ipy_region r ON CAST(r.id AS INTEGER) = p.region_id
 LEFT JOIN raw_ipy_city   c ON CAST(c.id AS INTEGER) = p.city_id;
@@ -65,9 +69,13 @@ LEFT JOIN raw_ipy_city   c ON CAST(c.id AS INTEGER) = p.city_id;
 -- fact_auction
 -- Grain: one row per bid request iPinYou bid on.   Primary key: bid_id
 -- Source: stg_ipy_bids LEFT JOIN impressions, clicks and conversions on bid_id.
--- won/clicked/converted are flags; impressions, clicks and conversions are already one row
--- per bid_id in staging. impression_events / pay_price_events_sum keep the raw-row counts
--- (duplicate impression logs, D27) used only to reproduce the paper's Table 3.
+-- Slot attributes are recorded per auction because visibility varies within a slot (D30).
+-- Visibility codes follow the dataset specification (1 above the fold, 2 below, 0 unknown);
+-- 255 and the format codes are undocumented and kept as codes.
+-- clicked / converted require a won auction: 87 clicks and 13 conversions have no impression
+-- row (logging gap, D31) and are flagged separately instead of counting toward CTR or CVR.
+-- impression_events / pay_price_events_sum keep the raw-row counts (duplicate impression
+-- logs, D27) used only to reproduce the paper's Table 3.
 CREATE OR REPLACE TABLE fact_auction AS
 SELECT
     b.bid_id,
@@ -79,6 +87,17 @@ SELECT
     b.region_id,
     b.city_id,
     b.slot_id,
+    b.slot_width,
+    b.slot_height,
+    b.slot_width || 'x' || b.slot_height   AS size_label,
+    b.slot_visibility,
+    CASE b.slot_visibility
+        WHEN '1'   THEN 'Above the fold'
+        WHEN '2'   THEN 'Below the fold'
+        WHEN '0'   THEN 'Unknown'
+        ELSE 'Undocumented (' || b.slot_visibility || ')'
+    END                                    AS visibility_label,
+    b.slot_format,
     b.os,
     b.browser,
     b.floor_price,
@@ -87,8 +106,10 @@ SELECT
     i.pay_price,
     coalesce(i.impression_events, 0)       AS impression_events,
     i.pay_price_events_sum,
-    c.bid_id IS NOT NULL                   AS clicked,
-    v.bid_id IS NOT NULL                   AS converted
+    i.bid_id IS NOT NULL AND c.bid_id IS NOT NULL AS clicked,
+    i.bid_id IS NOT NULL AND v.bid_id IS NOT NULL AS converted,
+    i.bid_id IS NULL AND c.bid_id IS NOT NULL     AS click_without_impression,
+    i.bid_id IS NULL AND v.bid_id IS NOT NULL     AS conversion_without_impression
 FROM stg_ipy_bids b
 LEFT JOIN stg_ipy_imps   i ON i.bid_id = b.bid_id
 LEFT JOIN stg_ipy_clicks c ON c.bid_id = b.bid_id
