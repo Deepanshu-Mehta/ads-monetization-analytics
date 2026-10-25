@@ -1,0 +1,8 @@
+cohort_week,cohort,weeks_since_start,cohort_size,active_campaigns,campaign_retention,media_cost_idx,spend_retention,share_of_week_spend
+0,existing (week 0),0,674,674,1.0,1095.294,1.0,1.0
+0,existing (week 0),1,674,673,0.999,1033.885,0.944,1.0
+0,existing (week 0),2,674,670,0.994,1141.043,1.042,0.998
+0,existing (week 0),3,674,670,0.994,1111.143,1.014,0.998
+1,new in week 1,0,1,1,1.0,0.369,1.0,0.0
+1,new in week 1,1,1,1,1.0,1.745,4.731,0.002
+1,new in week 1,2,1,1,1.0,1.88,5.096,0.002

@@ -11,20 +11,27 @@
 -- 0.66% of conversion_ids span 2-3 campaigns with different conversion timestamps, so the
 -- campaign is part of the key. cpo varies across rows of the same conversion in 28% of cases;
 -- revenue uses the cpo on the last impression before the conversion (D28). cpo_values and
--- conversion_ts_values keep that variation visible for the Phase 2 profile.
+-- conversion_ts_values keep that variation visible for the Phase 2 profile. last_impression_ts
+-- and _day date the touch closest to the conversion, for conversion-lag measures (D36, D40).
 CREATE OR REPLACE TABLE fact_conversion AS
+WITH rows AS (     -- 51 pairs carry more than one conversion timestamp: anchor on the first
+    SELECT *, min(conversion_ts) OVER (PARTITION BY conversion_id, campaign_id) AS first_conversion_ts
+    FROM stg_criteo_imps
+    WHERE conversion = 1
+)
 SELECT
     conversion_id,
     campaign_id,
-    max(attribution)                       AS attributed,
-    arg_max(cpo, (ts, imp_id))             AS cpo_idx,
-    count(DISTINCT cpo)                    AS cpo_values,
-    min(conversion_ts)                     AS conversion_ts,
-    min(conversion_ts) // 86400            AS conversion_day,
-    count(DISTINCT conversion_ts)          AS conversion_ts_values,
-    count(*)                               AS impression_rows
-FROM stg_criteo_imps
-WHERE conversion = 1
+    max(attribution)                                                   AS attributed,
+    arg_max(cpo, (ts, imp_id)) FILTER (WHERE ts <= first_conversion_ts) AS cpo_idx,
+    count(DISTINCT cpo)                                                AS cpo_values,
+    min(conversion_ts)                                                 AS conversion_ts,
+    min(conversion_ts) // 86400                                        AS conversion_day,
+    max(ts) FILTER (WHERE ts <= first_conversion_ts)                   AS last_impression_ts,
+    max(ts) FILTER (WHERE ts <= first_conversion_ts) // 86400          AS last_impression_day,
+    count(DISTINCT conversion_ts)                                      AS conversion_ts_values,
+    count(*)                                                           AS impression_rows
+FROM rows
 GROUP BY conversion_id, campaign_id;
 
 -- dim_campaign

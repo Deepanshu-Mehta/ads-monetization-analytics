@@ -119,6 +119,27 @@ JOIN dim_advertiser a USING (advertiser_id);
 -- not absolute amounts. Media cost by impression day, revenue by conversion day (D13).
 -- ---------------------------------------------------------------------------------------------
 
+-- metrics_criteo_lag_completeness
+-- Grain: one row per day d of the window (0-30).   Primary key: day
+-- Source: fact_conversion. The share of conversions, attributed conversions and attributed revenue
+-- whose last impression came at most d whole days before the conversion. Data starts on day 0, so
+-- conversion-dated totals on day d hold about this share of their steady-state value; dividing by
+-- it gives the lag-adjusted figure (D36, D40). Reaches 1 by day 30: no lag exceeds 30 days.
+CREATE OR REPLACE VIEW metrics_criteo_lag_completeness AS
+WITH lags AS (
+    SELECT conversion_day - last_impression_day AS day_lag, attributed, cpo_idx
+    FROM fact_conversion
+)
+SELECT
+    d                                                                           AS day,
+    count(*) FILTER (WHERE day_lag <= d) / count(*)                             AS conversions_complete,
+    count(*) FILTER (WHERE attributed = 1 AND day_lag <= d)
+        / count(*) FILTER (WHERE attributed = 1)                                AS attributed_complete,
+    sum(cpo_idx) FILTER (WHERE attributed = 1 AND day_lag <= d)
+        / sum(cpo_idx) FILTER (WHERE attributed = 1)                            AS revenue_complete
+FROM lags CROSS JOIN range(0, 31) AS t(d)
+GROUP BY d;
+
 -- metrics_criteo_day
 -- Grain: one row per day (0-60).   Primary key: day
 -- Source: mart_campaign_day. Days 31-60 carry conversions only. No margin or CVR here: they

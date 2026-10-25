@@ -84,6 +84,7 @@ flowchart LR
 | Churned campaigns | Impressions in week *w* − 1, none in week *w* | `churned_campaigns` | count | Weeks 1–3 only (D39) |
 | Spend retention | A cohort's media cost in week *w* ÷ its media cost in its first week | built in Q12 | ratio | Week-0 cohort labelled "existing" (D05) |
 | Revenue concentration | Revenue share of the top 10% of campaigns (68 of 675), and the Herfindahl index Σ share² | `top_decile_revenue_share`, `revenue_hhi` | ratio, 0–1 | Whole period. HHI × 10,000 gives the antitrust scale |
+| Lag completeness | Share of conversions, attributed conversions or revenue whose last impression came at most *d* whole days before the conversion | `metrics_criteo_lag_completeness` | ratio, 0–1 | Divide a day's conversion-dated total by it for the lag-adjusted figure (D40, D46) |
 
 ## Views
 
@@ -93,6 +94,7 @@ Each view states its grain and carries its base columns, so it can be rolled up 
 | :- | :- | :- |
 | `metrics_ipy_hourly` | advertiser × hour × exchange | Dayparting, exchange comparison, dashboard page 3 |
 | `metrics_ipy_advertiser` | advertiser | Market overview (Q1), dashboard KPIs |
+| `metrics_criteo_lag_completeness` | day 0–30 | Lag adjustment of conversion-dated measures (Q9, Q15) |
 | `metrics_criteo_day` | day 0–60 | Daily volume and cost, the 7-day trend (Q8, Q9). No margin or CVR: those would divide conversion-dated by impression-dated values |
 | `metrics_criteo_week` | week 0–8 | Weekly KPIs with week-over-week comparison on the middle weeks; activity, new and churned campaigns |
 | `metrics_criteo_campaign` | campaign, whole period | Scorecard, segment matrix, Pareto curve (Q10, Q11, Q14) |

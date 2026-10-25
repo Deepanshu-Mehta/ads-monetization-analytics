@@ -1,0 +1,10 @@
+segment,campaigns,revenue_share,media_cost_share,margin_pct,return_on_media_cost,attribution_rate,ctr,cvr,median_lag_hours
+low CTR · high CVR · slow buyers,58,0.2186,0.1835,0.7957,4.89,0.4106,0.2982,0.0798,77.4
+high CTR · low CVR · slow buyers,54,0.1727,0.1601,0.7743,4.43,0.5444,0.4068,0.034,74.5
+high CTR · high CVR · slow buyers,39,0.1685,0.1374,0.8015,5.04,0.4218,0.4005,0.0884,70.6
+low CTR · low CVR · slow buyers,44,0.1161,0.106,0.778,4.5,0.477,0.2954,0.0345,66.5
+high CTR · low CVR · fast buyers,60,0.088,0.1181,0.6732,3.06,0.518,0.4627,0.0301,26.7
+high CTR · high CVR · fast buyers,42,0.0653,0.1064,0.6032,2.52,0.6195,0.444,0.2388,13.4
+low CTR · low CVR · fast buyers,37,0.0519,0.0451,0.7884,4.73,0.4704,0.2916,0.0288,27.2
+low CTR · high CVR · fast buyers,56,0.0366,0.0335,0.7771,4.49,0.7301,0.2817,0.3038,0.1
+Long tail (not scored),285,0.0822,0.1098,0.675,3.08,0.4186,0.3281,0.0272,38.9

@@ -1,0 +1,31 @@
+week_pair,basis,component_type,component,revenue_idx,share_of_start_revenue
+week 1 to 2,raw,driver,start revenue,3538.735,
+week 1 to 2,raw,driver,volume (conversions),314.023,0.0887
+week 1 to 2,raw,driver,attribution rate,-313.113,-0.0885
+week 1 to 2,raw,driver,price & mix (average CPO),301.569,0.0852
+week 1 to 2,raw,driver,end revenue,3841.215,
+week 1 to 2,lag-adjusted,driver,start revenue,4124.802,
+week 1 to 2,lag-adjusted,driver,volume (conversions),-84.251,-0.0204
+week 1 to 2,lag-adjusted,driver,attribution rate,-106.199,-0.0257
+week 1 to 2,lag-adjusted,driver,price & mix (average CPO),216.865,0.0526
+week 1 to 2,lag-adjusted,driver,end revenue,4151.216,
+week 2 to 3,raw,driver,start revenue,3841.215,
+week 2 to 3,raw,driver,volume (conversions),-93.186,-0.0243
+week 2 to 3,raw,driver,attribution rate,-123.413,-0.0321
+week 2 to 3,raw,driver,price & mix (average CPO),346.907,0.0903
+week 2 to 3,raw,driver,end revenue,3971.522,
+week 2 to 3,raw,campaign mover,campaign 15398570 (top gainer),72.597,0.0189
+week 2 to 3,raw,campaign mover,campaign 6686701 (top gainer),65.509,0.0171
+week 2 to 3,raw,campaign mover,campaign 18975823 (top gainer),20.039,0.0052
+week 2 to 3,raw,campaign mover,campaign 14121532 (top gainer),18.247,0.0048
+week 2 to 3,raw,campaign mover,campaign 30368132 (top gainer),17.684,0.0046
+week 2 to 3,raw,campaign mover,campaign 14661605 (top decliner),-29.084,-0.0076
+week 2 to 3,raw,campaign mover,campaign 2865314 (top decliner),-21.785,-0.0057
+week 2 to 3,raw,campaign mover,campaign 30535894 (top decliner),-14.905,-0.0039
+week 2 to 3,raw,campaign mover,campaign 12121528 (top decliner),-14.624,-0.0038
+week 2 to 3,raw,campaign mover,campaign 5061834 (top decliner),-13.231,-0.0034
+week 2 to 3,lag-adjusted,driver,start revenue,4151.216,
+week 2 to 3,lag-adjusted,driver,volume (conversions),-379.672,-0.0915
+week 2 to 3,lag-adjusted,driver,attribution rate,30.741,0.0074
+week 2 to 3,lag-adjusted,driver,price & mix (average CPO),297.302,0.0716
+week 2 to 3,lag-adjusted,driver,end revenue,4099.587,
