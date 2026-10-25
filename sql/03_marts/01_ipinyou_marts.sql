@@ -118,6 +118,8 @@ LEFT JOIN stg_ipy_convs  v ON v.bid_id = b.bid_id;
 -- mart_ipy_hourly
 -- Grain: one row per advertiser x hour x exchange.   Primary key: (advertiser_id, hour_ts, exchange_id)
 -- Source: fact_auction. Sums only, so any ratio can be rebuilt as sum / sum (D04).
+-- bid_headroom_sum floors each won auction's (bid - pay) at zero, since 1.55% pay above the
+-- recorded bid (D33); divide by won_bid_price_sum for bid headroom.
 CREATE OR REPLACE TABLE mart_ipy_hourly AS
 SELECT
     advertiser_id,
@@ -128,6 +130,8 @@ SELECT
     count(*) FILTER (WHERE clicked)                AS clicks,
     count(*) FILTER (WHERE converted)              AS conversions,
     coalesce(sum(pay_price), 0)                    AS pay_price_sum,
-    coalesce(sum(pay_price), 0) / 1000.0           AS spend_fen
+    coalesce(sum(pay_price), 0) / 1000.0           AS spend_fen,
+    coalesce(sum(bid_price) FILTER (WHERE won), 0) AS won_bid_price_sum,
+    coalesce(sum(greatest(bid_price - pay_price, 0)) FILTER (WHERE won), 0) AS bid_headroom_sum
 FROM fact_auction
 GROUP BY ALL;

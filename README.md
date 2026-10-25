@@ -2,7 +2,7 @@
 
 Business analysis of an ad platform's revenue, auction health and advertiser performance, built on two public advertising datasets with SQL (DuckDB), Excel and a BI dashboard.
 
-> **Status:** in progress. The warehouse and its quality gates are complete; findings, recommendations and the dashboard are added as later phases land.
+> **Status:** in progress. The warehouse, its quality gates and the metric layer are complete; findings, recommendations and the dashboard are added as later phases land.
 
 ## Business questions
 
@@ -17,23 +17,23 @@ The project answers 16 questions an ads-monetization analyst faces every week, f
 
 **Credits.** iPinYou data: Liao et al., *iPinYou Global RTB Bidding Algorithm Competition Dataset* (2014), and Zhang et al., *Real-Time Bidding Benchmarking with iPinYou Dataset* (2014). Criteo data: Diemert, Meynet et al., *Attribution Modeling Increases Efficiency of Bidding in Display Advertising* (AdKDD 2017).
 
-Known limitations, and the proxies used for them, are listed in [`docs/requirements.md`](docs/requirements.md). Every judgment call is recorded in [`docs/decisions.md`](docs/decisions.md).
+Known limitations, and the proxies used for them, are listed in [`docs/requirements.md`](docs/requirements.md). Every judgment call is recorded in [`docs/decisions.md`](docs/decisions.md), and every KPI is defined once in [`docs/metric_dictionary.md`](docs/metric_dictionary.md).
 
 ## Data quality
 
-The build **reproduces the iPinYou benchmark paper's Table 3 exactly** for all five Season 2 advertisers (bids, impressions, clicks, conversions, cost, CPM, eCPC). Twelve SQL tests run in two gates on every build, and the run stops at the first failure:
+The build **reproduces the iPinYou benchmark paper's Table 3 exactly** for all five Season 2 advertisers: all 50 published cells (bids, impressions, clicks, conversions, cost and five rates). Fourteen SQL tests run in two gates on every build, and the run stops at the first failure:
 
 | Gate | Runs | Tests |
 | :- | :- | :- |
 | 1 · staging | before the marts are built | unique keys, no rows lost from raw, event lineage, date coverage, Criteo flag logic, attribution consistency |
-| 2 · marts | before anything is exported | Table 3 reconciliation, second-price rule, grain of every table, totals tie across layers, referential integrity, fact contract |
+| 2 · marts | before anything is exported | Table 3 reconciliation, second-price rule, grain of every table, totals tie across layers, referential integrity, fact contract, metric views tie to the marts, metric rules |
 
 Known data issues are documented and bounded by tests rather than hidden: duplicate impression logs, clicks without an impression row, paying prices above the recorded bid, and Criteo cpo varying within a conversion. See [`docs/data_profile.md`](docs/data_profile.md) for the full profile.
 
 ## Architecture
 
 ```
-data/raw  ──►  data/parquet  ──►  raw_* views  ──►  stg_* tables  ──►  gate 1  ──►  fact_* / dim_* / mart_*  ──►  gate 2  ──►  analysis, dashboard, Excel
+data/raw  ──►  data/parquet  ──►  raw_* views  ──►  stg_* tables  ──►  gate 1  ──►  fact_* / dim_* / mart_* / metrics_*  ──►  gate 2  ──►  analysis, dashboard, Excel
 (downloads)    (all text,         (sql/00_load)     (typed, parsed,    (tests)      (sql/03_marts)                 (tests)
                md5-verified)                         deduplicated)
 ```
@@ -43,6 +43,7 @@ data/raw  ──►  data/parquet  ──►  raw_* views  ──►  stg_* tabl
 | Raw | `sql/00_load` | `raw_ipy_bid`, `raw_ipy_imp`, `raw_ipy_clk`, `raw_ipy_conv`, `raw_ipy_test`, `raw_ipy_region`, `raw_ipy_city`, `raw_criteo` |
 | Staging | `sql/01_staging` | `stg_ipy_bids`, `stg_ipy_imps`, `stg_ipy_clicks`, `stg_ipy_convs`, `stg_criteo_imps` |
 | Marts | `sql/03_marts` | `ref_ipinyou_table3`, `fact_auction`, `dim_advertiser`, `dim_exchange`, `dim_slot`, `dim_geo`, `mart_ipy_hourly`, `fact_conversion`, `dim_campaign`, `mart_campaign_day` |
+| Metrics | `sql/03_marts/03_metrics.sql` | KPI macros (`ctr()`, `win_rate()`, `margin_pct()`, …) and views `metrics_ipy_hourly`, `metrics_ipy_advertiser`, `metrics_criteo_day`, `metrics_criteo_week`, `metrics_criteo_campaign`, `metrics_criteo_platform` |
 
 Each table's SQL header states its grain, primary key and source.
 
@@ -70,7 +71,7 @@ Every step is idempotent and can be rerun safely.
 │   ├── 00_load/            # raw_* views over Parquet
 │   ├── 01_staging/         # stg_*: typed, parsed, deduplicated
 │   ├── 02_test_staging/    # gate 1: each test returns 0 rows
-│   ├── 03_marts/           # fact_*, dim_*, mart_*
+│   ├── 03_marts/           # fact_*, dim_*, mart_*, metric macros and views
 │   ├── 04_test_marts/      # gate 2: benchmark reconciliation and business rules
 │   └── 05_analysis/        # q01 … q16, one business question each
 ├── excel/                  # floor-price sizing model

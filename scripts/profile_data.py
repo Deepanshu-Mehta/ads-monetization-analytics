@@ -93,6 +93,7 @@ def main() -> None:
     """).fetchall()
     chosen = max((r for r in campaign_rule if r[3] >= 90), key=lambda r: r[0])
     s["campaign_threshold"], s["campaigns_kept"], _, s["campaign_rev_share"] = chosen
+    s["tests"] = sum(len(list((ROOT / "sql" / gate).glob("test_*.sql"))) for gate in ("02_test_staging", "04_test_marts"))
 
     doc = f"""# Data profile
 
@@ -103,7 +104,7 @@ Every number below is queried, not typed. Decisions referenced as D-numbers are 
 ## Summary
 
 Both datasets are fit for the planned analysis. The iPinYou build **reproduces the benchmark
-paper's Table 3 exactly** for all five Season 2 advertisers, and all 12 quality-gate tests pass
+paper's Table 3 exactly** for all five Season 2 advertisers, and all {s['tests']} quality-gate tests pass
 on every build. The findings that shape the analysis:
 
 1. **Bids are fixed test bids, not market bids (D23).** iPinYou ran these campaigns at a fixed,
@@ -138,7 +139,9 @@ UNION ALL SELECT 'Criteo', 'dim_campaign', 'campaign', count(*), NULL FROM dim_c
 
 Rebuilt from `fact_auction` using the paper's conventions, which count impression, click and
 conversion **log rows**, duplicates included (D29). Prices are CPM in Chinese fen (Zhang et al.,
-2014, section 2.2). The gate-2 test requires exact counts and money and rates within 0.1%.
+2014, section 2.2). The gate-2 test requires every published cell to match exactly at the paper's
+precision. The paper truncates cost and win ratio and rounds the other rates, so 3386's win ratio
+of 20.2087% appears there as 20.20; the table below rounds.
 
 {table(con, '''
 WITH ours AS (
@@ -160,7 +163,7 @@ SELECT o.advertiser_id AS advertiser, a.industry,
        100.0 * o.imps / o.bids AS "win ratio %", 1000.0 * o.cost / o.imps AS "CPM (fen)",
        o.cost / o.clicks AS "eCPC (fen)",
        CASE WHEN o.bids = p.bids AND o.imps = p.imps AND o.clicks = p.clicks AND o.convs = p.convs
-            THEN 'exact' ELSE 'differs' END AS "vs Table 3"
+            THEN 'exact' ELSE 'differs' END AS "counts vs Table 3"
 FROM ours o JOIN dim_advertiser a USING (advertiser_id) JOIN paper p USING (advertiser_id)
 ORDER BY 1
 ''', {"win ratio %": 2, "CPM (fen)": 2, "eCPC (fen)": 2})}

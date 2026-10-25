@@ -1,8 +1,8 @@
 -- Gate 2 · Reconciliation to the published benchmark
 -- Rebuilds the iPinYou paper's Table 3 (Season 2 training) from fact_auction, using the paper's
 -- conventions (D29): impressions, clicks and conversions count impression log rows, duplicates
--- included. Counts must match exactly; money and rates within 0.1%, or within half a unit of
--- the precision the paper publishes, whichever is larger.
+-- included. Every published cell must match exactly once our value is brought to the paper's
+-- precision with the paper's convention (cost and win ratio truncated, other rates rounded).
 -- Passes when it returns 0 rows.
 WITH ours AS (
     SELECT
@@ -34,5 +34,7 @@ SELECT r.advertiser_id, r.metric, r.paper_value, round(m.value, 4) AS our_value
 FROM ref_ipinyou_table3 r
 LEFT JOIN metrics m USING (advertiser_id, metric)
 WHERE m.value IS NULL
-   OR (r.metric IN ('bids', 'imps', 'clicks', 'convs') AND m.value <> r.paper_value)
-   OR abs(m.value - r.paper_value) > greatest(0.001 * abs(r.paper_value), 0.5 * pow(10, -r.decimals));
+   OR abs(CASE r.rounding
+              WHEN 'truncate' THEN trunc(m.value * pow(10, r.decimals)) / pow(10, r.decimals)
+              ELSE round(m.value, r.decimals)
+          END - r.paper_value) > 1e-9;

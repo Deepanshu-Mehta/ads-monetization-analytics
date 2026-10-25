@@ -7,7 +7,7 @@ Every number below is queried, not typed. Decisions referenced as D-numbers are 
 ## Summary
 
 Both datasets are fit for the planned analysis. The iPinYou build **reproduces the benchmark
-paper's Table 3 exactly** for all five Season 2 advertisers, and all 12 quality-gate tests pass
+paper's Table 3 exactly** for all five Season 2 advertisers, and all 14 quality-gate tests pass
 on every build. The findings that shape the analysis:
 
 1. **Bids are fixed test bids, not market bids (D23).** iPinYou ran these campaigns at a fixed,
@@ -41,9 +41,11 @@ on every build. The findings that shape the analysis:
 
 Rebuilt from `fact_auction` using the paper's conventions, which count impression, click and
 conversion **log rows**, duplicates included (D29). Prices are CPM in Chinese fen (Zhang et al.,
-2014, section 2.2). The gate-2 test requires exact counts and money and rates within 0.1%.
+2014, section 2.2). The gate-2 test requires every published cell to match exactly at the paper's
+precision. The paper truncates cost and win ratio and rounds the other rates, so 3386's win ratio
+of 20.2087% appears there as 20.20; the table below rounds.
 
-| advertiser | industry | bids | impressions | clicks | conversions | win ratio % | CPM (fen) | eCPC (fen) | vs Table 3 |
+| advertiser | industry | bids | impressions | clicks | conversions | win ratio % | CPM (fen) | eCPC (fen) | counts vs Table 3 |
 | :- | :- | -: | -: | -: | -: | -: | -: | -: | :- |
 | 1458 | Chinese vertical e-commerce | 14,701,496 | 3,083,056 | 2,454 | 1 | 20.97 | 68.89 | 86.55 | exact |
 | 3358 | Software | 3,751,016 | 1,742,104 | 1,358 | 369 | 46.44 | 92.38 | 118.51 | exact |
